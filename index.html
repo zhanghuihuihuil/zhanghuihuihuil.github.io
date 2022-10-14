@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <title></title>
+        <style type="text/css" media="all">
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            .mainFrame {
+            	width: 320px;
+            	margin: 50px auto;
+            	height: 680px;
+            	background-color: blue;
+            	border-radius: 30px;
+            	border: 5px solid pink;
+            }
+            
+            #btn{
+            	background-color: black;
+            	color: white;
+            	width: 120px;
+            	height: 23px;
+            	position: relative;
+            	border: 1px solid white;
+            	left: 99px;
+            	top: 5px;
+            	border-radius: 20px;
+            }
+            /*屏幕宽度: 393   屏幕高度: 873*/
+        </style>
+    </head>
+    <body>
+    	<div class="mainFrame">
+    		
+    		<input type="button" id="btn" value="O" />
+    	</div>
+    	<script type="text/javascript" charset="utf-8">
+    		let btn = document.getElementById("btn");
+    		btn.addEventListener("click", function(){
+    			let width = window.screen.width;
+    			let height = window.screen.height;
+    			alert(`当前屏幕的宽度为: ${width}\n当前的屏幕高度为: ${height}`);
+    		})
+    	</script>
+    </body>
+</html>
