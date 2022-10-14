@@ -10,40 +10,88 @@
                 box-sizing: border-box;
             }
             .mainFrame {
-            	width: 320px;
-            	margin: 50px auto;
-            	height: 680px;
-            	background-color: blue;
-            	border-radius: 30px;
-            	border: 5px solid pink;
+                width: 370px;
+                margin: 50px auto;
+                height: 780px;
+                background-color: blue;
+                border-radius: 30px;
+                border: 5px solid pink;
             }
-            
-            #btn{
-            	background-color: black;
-            	color: white;
-            	width: 120px;
-            	height: 23px;
+
+            .popWindows {
+                background-color: black;
+                color: white;
+                width: 140px;
+                height: 25px;
+                position: relative;
+                font-size: 15px;
+                display: none;
+
+                text-align: center;
+                border: 1px solid white;
+                margin: 5px auto;
+                border-radius: 20px;
+                color: white;
+            }
+            .bottomControlFrame {
+            	width: 330px;
+            	height: 50px;
             	position: relative;
+            	top: 680px;
+            	left: 20px;
+                border-radius: 26px;
+                background: #e0e0e0;
+
+            }
+            #btn1{
+            	width: 43px;
+
+            	margin-top: 4px;
+            	margin-left: 15px;
+            	color: black;
+            	height: 43px;
+            	background-color: #a9a9a9;
+            	border-radius: 10px;
             	border: 1px solid white;
-            	left: 99px;
-            	top: 5px;
-            	border-radius: 20px;
+            }
             }
             /*屏幕宽度: 393   屏幕高度: 873*/
         </style>
     </head>
     <body>
-    	<div class="mainFrame">
-    		
-    		<input type="button" id="btn" value="O" />
-    	</div>
-    	<script type="text/javascript" charset="utf-8">
-    		let btn = document.getElementById("btn");
-    		btn.addEventListener("click", function(){
-    			let width = window.screen.width;
-    			let height = window.screen.height;
-    			alert(`当前屏幕的宽度为: ${width}\n当前的屏幕高度为: ${height}`);
-    		})
-    	</script>
+        <div class="mainFrame">
+            <div class="popWindows">太难了他妈的!!!</div>
+            <div class="bottomControlFrame">
+                <button id="btn1" type="button">测试</button>
+            </div>
+        </div>
+        <script type="text/javascript" charset="utf-8">
+            let btn = document.querySelector(".popWindows");
+            btn.addEventListener("click", function () {
+                let width = window.screen.width;
+                let height = window.screen.height;
+                alert(
+                    `当前屏幕的宽度为: ${width}\n当前的屏幕高度为: ${height}`
+                );
+            });
+            let pop = document.querySelector(".popWindows");
+            let test = document.getElementById("btn1");
+            let popWidth = 140;
+
+            btn1.addEventListener("click", () => {
+                pop.innerHTML = "测试弹窗";
+                pop.style.display = "block";
+
+                for (var i = 0; i <= 10; i++) {
+                    setTimeout(() => {
+                        pop.style.width = `${popWidth + i}px`;
+                    }, 100);
+                }
+            });
+
+            btn1.addEventListener("dblclick", () => {
+                pop.style.display = "none";
+            });
+        </script>
     </body>
 </html>
